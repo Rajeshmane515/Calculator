@@ -1,131 +1,112 @@
-<! DOCTYPE html>  
-<html>  
-    <head>  
-    <meta charset="utf-8">  
-    <title>  
-         CALCULATOR
-    </title>  
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">  
-   
-    <style>  
-    html {  
-  height: 100vh;
-  width: 100vw;  
-  display: flex;  
-  align-items: center;  
-  justify-content: center;  
-  background-color: white;    
-  font-family: sans-serif;  
-}  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colorful Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
 
-input[type=button] {  
-  width: 60px;  
-  height: 60px;  
-  float: left;  
-  padding: 10px;  
-  margin: 5px;  
-  box-sizing: border-box;  
-  background: #ecedef;  
-  border: none;  
-  font-size: 30px;  
-  line-height: 30px;  
-  border-radius: 50%;  
-  font-weight: 700;  
-  color: black;  
-  cursor: pointer;    
-}  
-input[type=text] {  
-  width: 270px;  
-  height: 60px;  
-  float: left;  
-  padding: 0;  
-  box-sizing: border-box;  
-  border: none;  
-  background: none;  
-  color: black;  
-  text-align: right;  
-  font-weight: 700;  
-  font-size: 60px;  
-  line-height: 60px;  
-  margin: 0 25px;  
-  }  
-.calculator {  
-  background-color: white;   
-  border: 2px solid black;  
-  border-radius: 5px;  
-}  
-#display {  
-  height: 40px;  
-  text-align: right;  
-  background-color: white;  
-  border: 3px solid white;  
-  font-size: 18px;  
-  left: 2px;  
-  top: 2px;  
-  color: black;  
-}  
-.btnTop {  
-  color: grey;  
-  background-color: white;  
-  font-size: 14px;  
-  margin: auto;  
-  width: 50px;  
-  height: 25px;  
-}
+    body, html {
+      height: 100%;
+      margin: 0;
+      background: linear-gradient(135deg, #0f2027, #0a0c4a, #3e166f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.mdiv{
-  height: 100vh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+    .calculator {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
 
-}
+    #display {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-align: right;
+      padding: 10px;
+      border: none;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2);
+    }
 
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 70px);
+      grid-gap: 15px;
+      justify-content: center;
+    }
 
-    </style>  
-</head>  
+    .buttons input[type="button"] {
+      height: 70px;
+      width: 70px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
 
- <body>
+    .buttons input[type="button"]:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #8f94fb;
+    }
 
-    <div class="mdiv">
-      <div class="mdiv1">
-      <form name="Calculator" class = "calculator" style="vertical-align: middle; align-items: center; justify-content: center;" >  
-      <table class="display" border="2" align="center" cellpadding="15" cellspacing="12" bgcolor="#c0c0c0">  
-      <tr>  
-      <td>  
-      <input type="text" name="Input" Size="35" id="display">  
-      <br>  
-      </td>  
-      </tr>  
-      <tr>  
-      <td>  
-      <input type="button" name = "one" style="font-size:30px" value=" 1 " OnClick="Calculator.Input.value += '1'">  
-      <input type="button" name = "two" style = "font-size:30px" value=" 2 " OnCLick="Calculator.Input.value += '2'">  
-      <input type="button" name = "three" style="font-size:30px" value=" 3 " OnClick="Calculator.Input.value += '3'">  
-      <input type="button" name="add" class ="btnTop" style="font-size:30px" value=" + " OnClick="Calculator.Input.value += ' + '">  
-      <br>  
-      <input type="button" name = "four" style="font-size:30px" value=" 4 " OnClick="Calculator.Input.value += '4'">  
-      <input type="button" name = "five" style="font-size:30px" value=" 5 " OnCLick="Calculator.Input.value += '5'">  
-      <input type="button" name = "six" style="font-size:30px" value=" 6 " OnClick="Calculator.Input.value += '6'">  
-      <input type="button" name = "minus" style="font-size:30px" value=" - " OnClick="Calculator.Input.value += ' - '">  
-      <br>  
-      <input type="button"  name = "seven" style="font-size:30px" value=" 7 " OnClick="Calculator.Input.value += '7'">  
-      <input type="button" name = "eight" style="font-size:30px" value=" 8 " OnCLick="Calculator.Input.value += '8'">  
-      <input type="button" name = "nine" style="font-size:30px" value=" 9 " OnClick="Calculator.Input.value += '9'">  
-      <input type="button" name = "mul" style="font-size:30px" value=" * "  
-      OnClick="Calculator.Input.value += ' * '">  
-      <br>  
-      <input type="button" name ="clear" style="font-size:30px" value=" c " OnClick="Calculator.Input.value = ''">  
-      <input type="button" name="zero" style="font-size:30px" value=" 0 " OnClick="Calculator.Input.value += '0'">  
-      <input type="button" name="DoIt" style="font-size:30px" value=" = " OnClick="Calculator.Input.value = eval(Calculator.Input.value)">  
-      <input type="button" name="div" style="font-size:30px" value=" / " OnClick="Calculator.Input.value += ' / '">  
-      <br>  
-      </td>  
-      </tr>  
-      </table>  
-      </form>  
+    .buttons .operator {
+      background: linear-gradient(to bottom right, #ff416c, #ff4b2b);
+    }
+
+    .buttons .equals {
+      background: linear-gradient(to bottom right, #11998e, #38ef7d);
+    }
+
+    .buttons .clear {
+      background: linear-gradient(to bottom right, #f7971e, #ffd200);
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <form name="Calculator" class="calculator">
+    <input type="text" name="Input" id="display" readonly>
+    <div class="buttons">
+      <input type="button" value="1" onclick="Calculator.Input.value += '1'">
+      <input type="button" value="2" onclick="Calculator.Input.value += '2'">
+      <input type="button" value="3" onclick="Calculator.Input.value += '3'">
+      <input type="button" value="+" class="operator" onclick="Calculator.Input.value += '+'">
+
+      <input type="button" value="4" onclick="Calculator.Input.value += '4'">
+      <input type="button" value="5" onclick="Calculator.Input.value += '5'">
+      <input type="button" value="6" onclick="Calculator.Input.value += '6'">
+      <input type="button" value="-" class="operator" onclick="Calculator.Input.value += '-'">
+
+      <input type="button" value="7" onclick="Calculator.Input.value += '7'">
+      <input type="button" value="8" onclick="Calculator.Input.value += '8'">
+      <input type="button" value="9" onclick="Calculator.Input.value += '9'">
+      <input type="button" value="*" class="operator" onclick="Calculator.Input.value += '*'">
+
+      <input type="button" value="C" class="clear" onclick="Calculator.Input.value = ''">
+      <input type="button" value="0" onclick="Calculator.Input.value += '0'">
+      <input type="button" value="=" class="equals" onclick="Calculator.Input.value = eval(Calculator.Input.value)">
+      <input type="button" value="/" class="operator" onclick="Calculator.Input.value += '/'">
     </div>
-    </div>
-</body>  
+  </form>
+
+</body>
 </html>
